@@ -20,12 +20,14 @@ const HTTP_PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(cors());
+app.use('/css', express.static(__dirname + '/css'));
+app.use('/js', express.static(__dirname + '/js'));
 
  // CREATE
 
 app.post("/api/restaurants", (req,res)=>{
     db.addNewRestaurant(req.body).then((result)=>{
-        res.json(result);
+        res.status(201).json("Restaurant created successfully");
     }).catch((err)=>{
         res.status(500).json({message: err.message});
     });
@@ -56,7 +58,7 @@ app.post("/api/restaurants", (req,res)=>{
 
 app.put("/api/restaurants/:id", (req,res)=>{
     db.updateRestaurantById(req.body, req.params.id).then((result)=>{
-        res.json(result);
+        res.status(204).json("Restaurant updated successfully");
     }).catch((err)=>{
         res.status(500).json({message: err.message});
     });  
@@ -68,7 +70,7 @@ app.put("/api/restaurants/:id", (req,res)=>{
 
 app.delete("/api/restaurants/:id", (req,res)=>{
     db.deleteRestaurantById(req.params.id).then((result)=>{
-        res.json(result);
+        res.status(204).json("Restaurant deleted");
     }).catch((err)=>{
         res.status(500).json({message: err.message});
     });  
@@ -77,7 +79,7 @@ app.delete("/api/restaurants/:id", (req,res)=>{
 
 
 app.get("/", (req,res)=>{
-    res.sendFile(path.join(__dirname,"/views/index.html"));
+    res.sendFile(path.join(__dirname,"/index.html"));
 });
 
 

@@ -1,2 +1,2 @@
-POST http://localhost:8080/api/restaurants
+GET http://localhost:8080/api/restaurants?
 Content-Type: application/json
