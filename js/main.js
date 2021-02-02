@@ -1,5 +1,5 @@
 /*****************************************************************************************************
- * WEB422 - Assignment 2
+ * WEB422 - Assignment 2 
  * I declare that this assignment is my own work in accordance with Seneca Academic Policy.
  * No part of this assignment has been copied manually or electronically from any other source
  * (including web sites) or distributed to other students.
@@ -44,12 +44,6 @@ function avg(grades){
 // given an array of "restaurant" data. For example, if the tableRows template was invoked with the first two results back from 
 // our Web API (left), it should output the following HTML (right):
 
-/*
-var compiled = _.template('<% _.forEach(users, function(user) { 
-    %><li><%- user %></li><% 
-}); %>');
-
-*/
 
 var tableRows = _.template(`<% _.forEach(restaurants, function(restaurant){
     %><tr data-id="<%- restaurant._id %>">
