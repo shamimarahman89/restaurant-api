@@ -1,13 +1,3 @@
-/*****************************************************************************************************
- * WEB422 - Assignment 2 
- * I declare that this assignment is my own work in accordance with Seneca Academic Policy.
- * No part of this assignment has been copied manually or electronically from any other source
- * (including web sites) or distributed to other students.
- * 
- * Name: Shamima Rahman                   Student ID:154321194             Date: 2nd February 2021
- * 
- * 
- ******************************************************************************************************/
 
 
 //This should be an empty array (we will populate it later with a "fetch" call to our back end API)
